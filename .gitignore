@@ -1,0 +1,77 @@
+# ==========================================
+# Unity Generated & Temporary Folders
+# ==========================================
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# ==========================================
+# Asset Pipeline & Package Manager Cache
+# ==========================================
+# Asset server cache folder
+/[Aa]ssetCache/
+
+# Unity Package Manager local cache
+/[Pp]ackages/manifest.json.lock*
+
+# ==========================================
+# Visual Studio / VS Code / Rider Projects
+# ==========================================
+ExportedObj/
+.consulo/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio 2022 / Roslyn
+.vs/
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# ==========================================
+# OS Generated Files
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+[Tt]humbs.db
+[Dd]esktop.ini
+
+# ==========================================
+# Crash & Profiler Reports
+# ==========================================
+sysinfo.txt
+*.stackdump
+
+# ==========================================
+# Builds & Executables
+# ==========================================
+*.apk
+*.aab
+*.unitypackage
+*.app
