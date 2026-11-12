@@ -11,6 +11,7 @@
     "com.unity.textmeshpro": "3.0.7",
     "com.unity.timeline": "1.7.7",
     "com.unity.ugui": "1.0.0",
+    "com.unity.vectorgraphics": "2.0.0-preview.25",
     "com.unity.visualscripting": "1.9.4",
     "dev.yarnspinner.unity": "https://github.com/YarnSpinnerTool/YarnSpinner-Unity.git#current",
     "com.unity.modules.ai": "1.0.0",
