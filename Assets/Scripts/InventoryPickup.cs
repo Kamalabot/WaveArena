@@ -1,5 +1,6 @@
 using UnityEngine;
 using Yarn.Unity;
+using System.Linq;
 
 public class InventoryPickup : MonoBehaviour
 {
@@ -22,9 +23,10 @@ public class InventoryPickup : MonoBehaviour
 
     private void TriggerNodeSafe(string nodeName)
     {
-        if (string.IsNullOrEmpty(nodeName) || dialogueRunner == null) return;
+        if (string.IsNullOrEmpty(nodeName) || dialogueRunner == null || dialogueRunner.YarnProject == null)
+            return;
 
-        if (!dialogueRunner.NodeExists(nodeName))
+        if (!dialogueRunner.YarnProject.NodeNames.Contains(nodeName))
         {
             Debug.LogWarning($"[Yarn] Node '{nodeName}' not found in YarnProject.");
             return;
@@ -32,7 +34,7 @@ public class InventoryPickup : MonoBehaviour
 
         if (dialogueRunner.IsDialogueRunning)
         {
-            dialogueRunner.Stop(); // Or queue it until onDialogueComplete fires
+            dialogueRunner.Stop();
         }
 
         dialogueRunner.StartDialogue(nodeName);
