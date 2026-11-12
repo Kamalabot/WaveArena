@@ -1,0 +1,32 @@
+title: Guard
+---
+<<declare $hasKeycard = false as Bool>>
+<<declare $dronesCleared = 0 as Number>>
+
+<<if $hasKeycard && $dronesCleared >= 3>>
+    <<jump Guard_MissionComplete>>
+<<elseif $hasKeycard>>
+    <<jump Guard_HasKeycardOnly>>
+<<else>>
+    <<jump Guard_NoKeycard>>
+<<endif>>
+===
+
+title: Guard_NoKeycard
+position: -158,79
+---
+Guard: You need the Security Keycard and must clear 3 relay drones.
+===
+
+title: Guard_HasKeycardOnly
+position: 159,80
+---
+Guard: Good, you found the keycard. Now clear those 3 drones!
+===
+
+title: Guard_MissionComplete
+position: -467,96
+---
+Guard: Keycard verified and drones cleared. Opening the sector gate!
+<<unlock_gate>>
+===

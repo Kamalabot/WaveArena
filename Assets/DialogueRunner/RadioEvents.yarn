@@ -1,0 +1,10 @@
+title: Event_KeycardFound
+---
+HQ: Nice work! That's the Security Keycard. Head back to the Guard.
+===
+
+title: Event_AllDronesCleared
+position: 230,3
+---
+HQ: That was the last drone—the relay signal is back online!
+===

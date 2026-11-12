@@ -16,11 +16,17 @@ public class PlayerController : MonoBehaviour
     private float nextFireTime;
     private IObjectPool<Bullet> bulletPool;
     private Vector3 originalScale;
+    private OverheadText overheadtext;
 
     private void Awake()
     {
         originalScale = transform.localScale;
-
+        
+        if (overheadtext == null)
+        {
+            overheadtext = GetComponentInChildren<OverheadText>();
+        }   
+        
         bulletPool = new ObjectPool<Bullet>(
             createFunc: () =>
             {
@@ -56,7 +62,7 @@ public class PlayerController : MonoBehaviour
     {
         Bullet b = bulletPool.Get();
         b.transform.position = firePoint != null ? firePoint.position : transform.position;
-
+        overheadtext.ShowMessage("Firing Bullets...", Color.yellow, 1.5f);
         Tween.Scale(transform, endValue: new Vector3(originalScale.x * 0.85f, originalScale.y * 1.25f, originalScale.z), duration: 0.06f, ease: Ease.OutQuad)
             .OnComplete(() => Tween.Scale(transform, endValue: originalScale, duration: 0.1f, ease: Ease.OutBounce));
     }

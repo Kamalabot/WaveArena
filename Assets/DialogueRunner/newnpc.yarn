@@ -1,0 +1,42 @@
+title: Guard_Start
+position: -166,-124
+---
+<<declare $questStage = 0 as Number>>
+
+<<if $questStage == 0>>
+    <<jump Guard_Stage0>>
+<<elseif $questStage == 1>>
+    <<jump Guard_Stage1>>
+<<else>>
+    <<jump Guard_Stage2>>
+<<endif>>
+===
+
+title: Guard_Stage0
+position: 238,-57
+---
+Guard: Halt! The east gate is locked.
+-> Why is it locked?
+    Guard: Drones swarmed the relay tower. Clear them out first.
+    <<set $questStage = 1>>
+-> Never mind.
+    Guard: Move along then.
+===
+
+title: Guard_Stage1
+position: -319,142
+---
+Guard: Have you cleared the relay tower yet?
+-> Not yet.
+    Guard: Hurry up, we are losing power.
+-> Yes, it's clear!
+    Guard: Good work! Opening the gate now.
+    <<set $questStage = 2>>
+    <<unlock_gate>>
+===
+
+title: Guard_Stage2
+position: 50,140
+---
+Guard: The gate is open. Stay safe out there.
+===
