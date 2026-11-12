@@ -63,6 +63,7 @@ public class PlayerController : MonoBehaviour
         Bullet b = bulletPool.Get();
         b.transform.position = firePoint != null ? firePoint.position : transform.position;
         overheadtext.ShowMessage("Firing Bullets...", Color.yellow, 1.5f);
+        AudioManager.Instance.PlaySFXWithPitchVariation(AudioManager.Instance.shootClip);
         Tween.Scale(transform, endValue: new Vector3(originalScale.x * 0.85f, originalScale.y * 1.25f, originalScale.z), duration: 0.06f, ease: Ease.OutQuad)
             .OnComplete(() => Tween.Scale(transform, endValue: originalScale, duration: 0.1f, ease: Ease.OutBounce));
     }
